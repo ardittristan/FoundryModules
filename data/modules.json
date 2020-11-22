@@ -1,3 +1,14 @@
-{
-
-}
+[
+  {
+    "name": "lib - Color Settings",
+    "manifest": "https://raw.githubusercontent.com/ardittristan/VTTColorSettings/master/module.json",
+    "description": null,
+    "repository": "ardittristan/VTTColorSettings"
+  },
+  {
+    "name": "Stream Utils",
+    "manifest": "https://raw.githubusercontent.com/ardittristan/VTTStreamUtils/master/module.json",
+    "description": null,
+    "repository": "ardittristan/VTTStreamUtils"
+  }
+]
