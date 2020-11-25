@@ -164,18 +164,6 @@
 </script>
 
 <style lang="scss" scoped>
-@function sqrt($r) {
-  $x0: 1;
-  $x1: $x0;
-
-  @for $i from 1 through 10 {
-    $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
-    $x0: $x1;
-  }
-
-  @return $x1;
-}
-
 header {
   display: flex;
   justify-content: space-between;
@@ -226,17 +214,35 @@ main {
 
   & span {
     position: absolute;
-    transform: rotate(-45deg);
+    transform: translateX(30%) translateY(0%) rotate(-45deg);
     transform-origin: bottom left;
-    bottom: -30px;
-    right: calc(-30px + #{-200px + (100 * sqrt(2))});
+    bottom: 0;
+    right: 0;
     background-color: darkred;
-    width: 200px;
     z-index: 1;
     text-align: center;
     opacity: 0.6;
     font-size: larger;
     padding: 0.2em 0;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      margin: 0 -1px;
+      width: 100%;
+      height: 100%;
+      background-color: darkred;
+    }
+
+    &::before {
+      right: 100%;
+    }
+
+    &::after {
+      left: 100%;
+    }
   }
 }
 </style>
