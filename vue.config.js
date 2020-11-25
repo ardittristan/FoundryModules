@@ -5,7 +5,7 @@ const path = require("path");
 module.exports = {
   transpileDependencies: ["vuetify"],
 
-  publicPath: process.env.NODE_ENV === "production" ? "/FoundryModules/dist/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/FoundryModules/" : "/",
 
   chainWebpack: (config) => {
     if (process.env.NODE_ENV === "production") {
