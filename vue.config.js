@@ -1,6 +1,4 @@
 const webpack = require("webpack");
-const FileManagerPlugin = require("filemanager-webpack-plugin");
-const path = require("path");
 
 module.exports = {
   transpileDependencies: ["vuetify"],
@@ -10,21 +8,6 @@ module.exports = {
   chainWebpack: (config) => {
     if (process.env.NODE_ENV === "production") {
       config.plugin("ignore").use(webpack.IgnorePlugin, [/(data\/modules\.json)/]);
-
-      config.plugin("github-pages-copy").use(FileManagerPlugin, [
-        {
-          onEnd: [
-            {
-              copy: [
-                {
-                  source: path.resolve(__dirname, "dist", "index.html"),
-                  destination: path.resolve(__dirname, "index.html"),
-                },
-              ],
-            },
-          ],
-        },
-      ]);
 
       config.module
         .rule("vue")
