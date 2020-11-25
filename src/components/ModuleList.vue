@@ -41,6 +41,7 @@
       display: flex;
       flex-direction: column;
       background-color: var(--v-secondary-darken1);
+      position: relative;
     }
   }
 </style>

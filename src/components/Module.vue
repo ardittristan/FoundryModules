@@ -1,7 +1,16 @@
 <template>
   <v-card
     :ripple="false"
+    elevation="2"
   >
+    <div
+      v-if="module.deprecated"
+      class="deprecated"
+    >
+      <span>
+        deprecated
+      </span>
+    </div>
     <header>
       <v-card-title>
         <a
@@ -10,28 +19,35 @@
         >{{ manifest.title }}</a>
       </v-card-title>
 
-      <v-tooltip bottom>
-        <template #activator="{ on, attrs }">
-          <v-chip
-            v-bind="attrs"
-            @click="copyManifest"
-            v-on="on"
-          >
-            <v-icon
-              size="1.5em"
-              left
+      <v-lazy
+        v-model="dlVisible"
+      >
+        <v-tooltip
+          v-if="dlVisible"
+          bottom
+        >
+          <template #activator="{ on, attrs }">
+            <v-chip
+              v-bind="attrs"
+              @click="copyManifest"
+              v-on="on"
             >
-              mdi-download
-            </v-icon>
-            <count-to
-              :start-val="0"
-              :end-val="downloadCount"
-              :duration="5000"
-            />
-          </v-chip>
-        </template>
-        <span>Click to copy manifest url</span>
-      </v-tooltip>
+              <v-icon
+                size="1.5em"
+                left
+              >
+                mdi-download
+              </v-icon>
+              <count-to
+                :start-val="0"
+                :end-val="downloadCount"
+                :duration="5000"
+              />
+            </v-chip>
+          </template>
+          <span>Click to copy manifest url</span>
+        </v-tooltip>
+      </v-lazy>
     </header>
     <main>
       <v-card-text>
@@ -93,6 +109,7 @@
       downloadCount: 0,
       languages: [],
       copyAlert: false,
+      dlVisible: false,
     }),
 
     computed: {
@@ -149,15 +166,31 @@
 </script>
 
 <style lang="scss" scoped>
+@function sqrt($r) {
+  $x0: 1;
+  $x1: $x0;
+
+  @for $i from 1 through 10 {
+    $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+    $x0: $x1;
+  }
+
+  @return $x1;
+}
+
 header {
   display: flex;
   justify-content: space-between;
-  background-color:var(--v-accent-darken3);
+  background-color: var(--v-accent-darken3);
 
-  & .v-chip {
-    align-self: center;
-    margin-right: 16px;
-    min-width: fit-content;
+  & .v-lazy {
+    display: flex;
+
+    & .v-chip {
+      align-self: center;
+      margin-right: 16px;
+      min-width: fit-content;
+    }
   }
 
   & a {
@@ -175,7 +208,6 @@ main {
   opacity: 0;
 }
 
-
 .languageChip {
   margin-right: 5px;
   margin-bottom: 5px;
@@ -186,5 +218,27 @@ main {
   position: fixed;
   bottom: 5px;
   left: calc(50% - 6.65em);
+}
+
+.deprecated {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  & span {
+    position: absolute;
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+    bottom: -30px;
+    right: calc(-30px + #{-200px + (100 * sqrt(2))});
+    background-color: darkred;
+    width: 200px;
+    z-index: 1;
+    text-align: center;
+    opacity: 0.6;
+    font-size: larger;
+    padding: 0.2em 0;
+  }
 }
 </style>
