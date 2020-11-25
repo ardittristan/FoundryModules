@@ -1,5 +1,5 @@
 import Vue from "vue";
-import Vuetify from "vuetify/lib";
+import Vuetify from "vuetify/lib/framework";
 
 Vue.use(Vuetify);
 
@@ -7,7 +7,7 @@ export default new Vuetify({
   theme: {
     dark: true,
     options: {
-      customProperties: true,
+      customProperties: true
     },
     themes: {
       dark: {
@@ -17,8 +17,8 @@ export default new Vuetify({
         error: "#FF5252",
         info: "#666666",
         success: "#4CAF50",
-        warning: "#FFC107",
-      },
-    },
-  },
+        warning: "#FFC107"
+      }
+    }
+  }
 });

@@ -10,5 +10,66 @@
     "manifest": "https://raw.githubusercontent.com/ardittristan/VTTStreamUtils/master/module.json",
     "description": null,
     "repository": "ardittristan/VTTStreamUtils"
+  },
+  {
+    "name": "Inline Webviewer",
+    "manifest": "https://raw.githubusercontent.com/ardittristan/VTTInlineWebviewer/master/module.json",
+    "description": null,
+    "repository": "ardittristan/VTTInlineWebviewer"
+  },
+  {
+    "name": "Not Enough NPCs",
+    "manifest": "https://raw.githubusercontent.com/ardittristan/VTTNPCGen/master/module.json",
+    "description": null,
+    "repository": "ardittristan/VTTNPCGen"
+  },
+  {
+    "name": "External Actor Viewer",
+    "manifest": "https://raw.githubusercontent.com/ardittristan/VTTExternalActorViewer/master/module.json",
+    "description": null,
+    "repository": "ardittristan/VTTExternalActorViewer"
+  },
+  {
+    "name": "Button Overflow",
+    "manifest": "https://raw.githubusercontent.com/ardittristan/VTTButtonOverflow/master/module.json",
+    "description": null,
+    "repository": "ardittristan/VTTButtonOverflow"
+  },
+  {
+    "name": "Macro Editor",
+    "manifest": "https://raw.githubusercontent.com/ardittristan/VTTMacroEditor/master/module.json",
+    "description": null,
+    "repository": "ardittristan/VTTMacroEditor"
+  },
+  {
+    "name": "5e-Sheet Resources Plus",
+    "manifest": "https://raw.githubusercontent.com/ardittristan/5eSheet-resourcesPlus/master/module.json",
+    "description": null,
+    "repository": "ardittristan/5eSheet-resourcesPlus"
+  },
+  {
+    "name": "Personal Markers",
+    "manifest": "https://raw.githubusercontent.com/ardittristan/VttPersonalMarkers/master/module.json",
+    "description": null,
+    "repository": "ardittristan/vttPersonalMarkers"
+  },
+  {
+    "name": "Hook Macros",
+    "manifest": "https://raw.githubusercontent.com/ardittristan/HookMacros/master/module.json",
+    "description": null,
+    "repository": "ardittristan/HookMacros"
+  },
+  {
+    "name": "FPS Meter",
+    "manifest": "https://raw.githubusercontent.com/ardittristan/VTTFPSMeter/master/module.json",
+    "description": null,
+    "repository": "ardittristan/VTTFPSMeter"
+  },
+  {
+    "name": "Return To Setup",
+    "manifest": "https://raw.githubusercontent.com/ardittristan/VTTReturnToSetup/master/module.json",
+    "description": null,
+    "repository": "ardittristan/VTTReturnToSetup",
+    "deprecated": true
   }
 ]
