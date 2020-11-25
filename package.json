@@ -29,7 +29,6 @@
     "eslint-config-vuetify": "^0.6.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-vue": "^7.1.0",
-    "filemanager-webpack-plugin": "^2.0.5",
     "sass": "^1.29.0",
     "sass-loader": "^10.1.0",
     "vue-cli-plugin-vuetify": "~2.0.7",
