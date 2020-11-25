@@ -33,15 +33,15 @@
 </script>
 
 <style lang="scss" scoped>
-  .module {
-    height: auto;
+.module {
+  height: auto;
 
-    & > .v-card {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      background-color: var(--v-secondary-darken1);
-      position: relative;
-    }
+  & > .v-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--v-secondary-darken1);
+    position: relative;
   }
+}
 </style>

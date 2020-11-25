@@ -19,9 +19,7 @@
         >{{ manifest.title }}</a>
       </v-card-title>
 
-      <v-lazy
-        v-model="dlVisible"
-      >
+      <v-lazy v-model="dlVisible">
         <v-tooltip
           v-if="dlVisible"
           bottom
