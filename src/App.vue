@@ -17,13 +17,13 @@
 <script>
   import ModuleList from "./components/ModuleList";
   import axios from "axios";
-  import options from "../data/options.json"
+  import options from "../data/options.json";
 
   export default {
     name: "App",
 
     components: {
-      ModuleList,
+      ModuleList
     },
 
     data: () => ({
@@ -33,26 +33,24 @@
 
     mounted() {
       if (process.env.VUE_APP_DEV) {
-        import("../data/modules.json").then((response) => {
+        import("../data/modules.json").then(response => {
           this.modules = response.default;
         });
       } else {
-        axios
-          .get(
-            options.dataUrl
-          )
-          .then((response) => {
-            this.modules = response.data;
-          });
+        axios.get(options.dataUrl).then(response => {
+          this.modules = response.data;
+        });
       }
-    },
+    }
   };
 </script>
 
 <style lang="scss">
 @import "./util/parseScssData.js";
 
-$titleLength: str-length($string: $title);
+$titleLength: str-length(
+  $string: $title,
+);
 
 .v-main {
   background-color: var(--v-secondary-base);
