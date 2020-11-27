@@ -5,7 +5,7 @@
       color="primary"
       dark
     >
-      <header>Ardittristan's Foundry VTT Modules</header>
+      <header>{{ title }}</header>
     </v-app-bar>
 
     <v-main>
@@ -17,6 +17,7 @@
 <script>
   import ModuleList from "./components/ModuleList";
   import axios from "axios";
+  import options from "../data/options.json"
 
   export default {
     name: "App",
@@ -27,6 +28,7 @@
 
     data: () => ({
       modules: [],
+      title: options.title
     }),
 
     mounted() {
@@ -37,7 +39,7 @@
       } else {
         axios
           .get(
-            "https://raw.githubusercontent.com/ardittristan/FoundryModules/master/data/modules.json"
+            options.dataUrl
           )
           .then((response) => {
             this.modules = response.data;
@@ -48,6 +50,10 @@
 </script>
 
 <style lang="scss">
+@import "./util/parseScssData.js";
+
+$titleLength: str-length($string: $title);
+
 .v-main {
   background-color: var(--v-secondary-base);
 }
@@ -63,13 +69,13 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: $titleLength * 20px) {
   .v-toolbar__content header {
     font-size: x-large;
   }
 }
 
-@media (max-width: 440px) {
+@media (max-width: $titleLength * 14.7px) {
   .v-toolbar__content header {
     font-size: larger;
     text-align: center;
