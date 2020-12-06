@@ -1,24 +1,23 @@
+[Go to site](https://ardittristan.github.io/FoundryModules/)
+
 # foundrymodules
 
-## Project setup
-```
-npm install
-```
+Can be used to showcase your foundry modules
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Setup
 
-### Compiles and minifies for production
-```
-npm run build
-```
+1. Edit /data/options.json
+2. Add your modules to /data/modules.json
 
-### Lints and fixes files
-```
-npm run lint
-```
+```json
+{
+  "name": "Return To Setup",
+  "manifest": "https://raw.githubusercontent.com/ardittristan/VTTReturnToSetup/master/module.json",
+  "description": null,
+  "repository": "ardittristan/VTTReturnToSetup",
+  "deprecated": true  //this property is not required
+}
+  ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+3. Upload to GitHub
+4. Profit
