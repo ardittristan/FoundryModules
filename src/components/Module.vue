@@ -204,6 +204,7 @@ main {
   position: fixed;
   bottom: 5px;
   left: calc(50% - 6.65em);
+  z-index: 1;
 }
 
 .deprecated {
