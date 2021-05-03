@@ -13,6 +13,7 @@ Can be used to showcase your foundry modules
 {
   "name": "Return To Setup",
   "manifest": "https://raw.githubusercontent.com/ardittristan/VTTReturnToSetup/master/module.json",
+  "releaseManifest": null, //optional
   "description": null,
   "repository": "ardittristan/VTTReturnToSetup",
   "deprecated": true  //this property is not required

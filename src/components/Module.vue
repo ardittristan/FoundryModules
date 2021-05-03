@@ -149,7 +149,7 @@
       copyManifest() {
         const listener = (ev) => {
           ev.preventDefault();
-          ev.clipboardData.setData('text/plain', this.module.manifest);
+          ev.clipboardData.setData('text/plain', this.module.releaseManifest || this.module.manifest);
         }
         document.addEventListener("copy", listener);
         document.execCommand("copy");
