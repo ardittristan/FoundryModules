@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - '**.md'
       - '**.yml'
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -18,6 +19,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
+      - uses: c-hive/gha-npm-cache@v1
       - name: Install Packages
         run: |
           npm install -g @vue/cli eslint
