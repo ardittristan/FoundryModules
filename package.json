@@ -22,6 +22,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.13",
     "@vue/cli-service": "~4.5.13",
+    "minipass": "^3.1.3",
     "node-sass-json-importer": "^4.3.0",
     "postcss": "github:ardittristan/postcss",
     "sass": "^1.32.13",
