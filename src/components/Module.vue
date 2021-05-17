@@ -99,7 +99,7 @@
     },
 
     props: {
-      module: Object,
+      module: Object
     },
 
     data: () => ({
@@ -107,7 +107,7 @@
       downloadCount: 0,
       languages: [],
       copyAlert: false,
-      dlVisible: false,
+      dlVisible: false
     }),
 
     computed: {
@@ -117,7 +117,7 @@
     },
 
     mounted() {
-      axios.get(this.module.manifest).then((response) => {
+      axios.get(this.module.manifest).then(response => {
         this.manifest = response.data;
 
         const languages = [];
@@ -138,28 +138,31 @@
         );
       });
 
-      import("gh-releases-stats").then((module) => {
-        module.default.total(this.module.repository, (_err, count) => {
-          this.downloadCount = count;
-        })
-      })
+      import("gh-releases-stats").then(module => {
+        module.default.byType(this.module.repository, (_err, typesDict) => {
+          this.downloadCount = typesDict.zip.downloadCount;
+        });
+      });
     },
 
     methods: {
       copyManifest() {
-        const listener = (ev) => {
+        const listener = ev => {
           ev.preventDefault();
-          ev.clipboardData.setData('text/plain', this.module.releaseManifest || this.module.manifest);
-        }
+          ev.clipboardData.setData(
+            "text/plain",
+            this.module.releaseManifest || this.module.manifest
+          );
+        };
         document.addEventListener("copy", listener);
         document.execCommand("copy");
         document.removeEventListener("copy", listener);
         this.copyAlert = true;
         setTimeout(() => {
           this.copyAlert = false;
-        }, 2500)
-      },
-    },
+        }, 2500);
+      }
+    }
   };
 </script>
 
@@ -228,7 +231,7 @@ main {
 
     &::before,
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       margin: 0 -1px;
