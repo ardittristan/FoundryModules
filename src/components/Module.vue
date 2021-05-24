@@ -14,7 +14,7 @@
     <header>
       <v-card-title>
         <a
-          :href="manifest.url"
+          :href="url"
           target="_blank"
         >{{ manifest.title }}</a>
       </v-card-title>
@@ -113,6 +113,9 @@
     computed: {
       description() {
         return this.module.description || this.manifest.description;
+      },
+      url() {
+        return this.module.url || this.manifest.url;
       }
     },
 
