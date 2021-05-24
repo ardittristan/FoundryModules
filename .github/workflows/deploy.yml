@@ -22,7 +22,7 @@ jobs:
       - uses: c-hive/gha-npm-cache@v1
       - name: Install Packages
         run: |
-          npm install -g @vue/cli eslint
+          npm install -g @vue/cli
           npm install
       - name: Build Application
         run: |
