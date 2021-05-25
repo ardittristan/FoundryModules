@@ -18,7 +18,7 @@ jobs:
       - name: Should Run
         shell: bash
         id: should-run
-        run: echo "::set-output name=out::$(node -e 'console.log(require(`data/options.json`).useActions)')"
+        run: echo "::set-output name=out::$(node -e 'console.log(require(`./data/options.json`).useActions)')"
       - name: Install npm dependencies
         if: github.event_name == 'workflow_dispatch' || steps.should-run.outputs.out == 'true'
         uses: bahmutov/npm-install@v1.6.0
