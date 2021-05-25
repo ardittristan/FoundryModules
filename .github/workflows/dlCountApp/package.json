@@ -1,0 +1,10 @@
+{
+  "name": "dlcountapp",
+  "version": "1.0.0",
+  "author": "ardittristan",
+  "license": "MIT",
+  "dependencies": {
+    "for-async-each": "^1.0.1",
+    "gh-releases-stats": "^1.2.6"
+  }
+}

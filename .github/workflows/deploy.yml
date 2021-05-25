@@ -4,8 +4,9 @@ on:
     branches:
       - master
     paths-ignore:
-      - '**.md'
-      - '**.yml'
+      - "**.md"
+      - "**.yml"
+      - ".github/**"
   workflow_dispatch:
 
 jobs:
