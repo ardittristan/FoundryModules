@@ -10,7 +10,10 @@
         md="6"
         sm="6"
       >
-        <module :module="module" />
+        <module
+          :module="module"
+          :dlcounts="dlCounts"
+        />
       </v-col>
     </v-row>
   </v-container>
@@ -18,17 +21,34 @@
 
 <script>
   import Module from "./Module";
+  import axios from "axios";
+  import options from "../../data/options.json";
 
   export default {
     name: "ModuleList",
 
     components: {
-      Module,
+      Module
     },
 
+    data: () => ({
+      dlCounts: {}
+    }),
+
     props: {
-      modules: Array,
+      modules: Array
     },
+
+    mounted() {
+      if (options.useActions)
+        axios
+          .get(
+            `https://raw.githubusercontent.com/${options.repo}/download-api/downloads.json`
+          )
+          .then(response => {
+            this.dlCounts = response.data;
+          });
+    }
   };
 </script>
 

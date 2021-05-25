@@ -90,6 +90,7 @@
   import axios from "axios";
   import each from "async-each";
   import CountTo from "vue-count-to";
+  import options from "../../data/options.json";
 
   export default {
     name: "Module",
@@ -99,7 +100,8 @@
     },
 
     props: {
-      module: Object
+      module: Object,
+      dlcounts: Object
     },
 
     data: () => ({
@@ -141,11 +143,15 @@
         );
       });
 
-      import("gh-releases-stats").then(module => {
-        module.default.byType(this.module.repository, (_err, typesDict) => {
-          this.downloadCount = typesDict.zip.downloadCount;
+      if (options.useActions) {
+        this.downloadCount = this.dlcounts[this.module.repository];
+      } else {
+        import("gh-releases-stats").then(module => {
+          module.default.byType(this.module.repository, (_err, typesDict) => {
+            this.downloadCount = typesDict.zip.downloadCount;
+          });
         });
-      });
+      }
     },
 
     methods: {

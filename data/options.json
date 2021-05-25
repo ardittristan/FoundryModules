@@ -2,5 +2,6 @@
   "publicPath": "/FoundryModules/",
   "title": "Ardittristan's Foundry Modules",
   "dataUrl": "https://raw.githubusercontent.com/ardittristan/FoundryModules/master/data/modules.json",
-  "useActions": true
+  "useActions": true,
+  "repo": "ardittristan/FoundryModules"
 }
