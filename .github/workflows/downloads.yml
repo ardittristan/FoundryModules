@@ -1,8 +1,11 @@
 name: Update Download Counts
 on:
-  schedule:
-    - cron: "0 */2 * * *"
+#  schedule:
+#    - cron: "0 */2 * * *"
   workflow_dispatch:
+  repository_dispatch:
+    types:
+      - download
 
 jobs:
   update:
