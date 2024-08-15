@@ -24,7 +24,7 @@ jobs:
       - name: Install Packages
         run: |
           npm install -g @vue/cli
-          npm install
+          yarn install
       - name: Build Application
         run: |
           npm run build

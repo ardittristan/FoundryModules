@@ -5,8 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "devinspect": "vue-cli-service inspect --mode development",
-    "preinstall": "npx npm-force-resolutions"
+    "devinspect": "vue-cli-service inspect --mode development"
   },
   "dependencies": {
     "async-each": "^1.0.3",
@@ -40,6 +39,7 @@
   "resolutions": {
     "ssri": "8.0.1",
     "copy-webpack-plugin/**/ssri": "6.0.2",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "@achrinza/node-ipc": "^9.2.9"
   }
 }
