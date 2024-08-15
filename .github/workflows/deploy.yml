@@ -17,10 +17,10 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Create Node Environment
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: 14.x
-      - uses: c-hive/gha-npm-cache@v1
+          node-version: "20"
+          cache: "yarn"
       - name: Install Packages
         run: |
           npm install -g @vue/cli
