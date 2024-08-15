@@ -21,25 +21,29 @@
     "name": "Not Enough NPCs",
     "manifest": "https://raw.githubusercontent.com/ardittristan/VTTNPCGen/master/module.json",
     "description": null,
-    "repository": "ardittristan/VTTNPCGen"
+    "repository": "ardittristan/VTTNPCGen",
+    "deprecated": true
   },
   {
     "name": "External Actor Viewer",
     "manifest": "https://raw.githubusercontent.com/ardittristan/VTTExternalActorViewer/master/module.json",
     "description": null,
-    "repository": "ardittristan/VTTExternalActorViewer"
+    "repository": "ardittristan/VTTExternalActorViewer",
+    "deprecated": true
   },
   {
     "name": "Button Overflow",
     "manifest": "https://raw.githubusercontent.com/ardittristan/VTTButtonOverflow/master/module.json",
     "description": null,
-    "repository": "ardittristan/VTTButtonOverflow"
+    "repository": "ardittristan/VTTButtonOverflow",
+    "deprecated": true
   },
   {
     "name": "Macro Editor",
     "manifest": "https://raw.githubusercontent.com/ardittristan/VTTMacroEditor/master/module.json",
     "description": null,
-    "repository": "ardittristan/VTTMacroEditor"
+    "repository": "ardittristan/VTTMacroEditor",
+    "deprecated": true
   },
   {
     "name": "5e-Sheet Resources Plus",
@@ -63,7 +67,8 @@
     "name": "FPS Meter",
     "manifest": "https://raw.githubusercontent.com/ardittristan/VTTFPSMeter/master/module.json",
     "description": null,
-    "repository": "ardittristan/VTTFPSMeter"
+    "repository": "ardittristan/VTTFPSMeter",
+    "deprecated": true
   },
   {
     "name": "Return To Setup",
