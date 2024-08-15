@@ -23,11 +23,11 @@ jobs:
           cache: "yarn"
       - name: Install Packages
         run: |
-          npm install -g @vue/cli
+          yarn install -g @vue/cli
           yarn install
       - name: Build Application
         run: |
-          npm run build
+          yarn run build
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env:
