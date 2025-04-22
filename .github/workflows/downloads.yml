@@ -14,7 +14,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Create Node Environment
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 14.x
       - name: Should Run
@@ -23,7 +23,7 @@ jobs:
         run: echo "::set-output name=out::$(node -e 'console.log(require(`./data/options.json`).useActions)')"
       - name: Install npm dependencies
         if: github.event_name == 'workflow_dispatch' || steps.should-run.outputs.out == 'true'
-        uses: bahmutov/npm-install@v1.6.0
+        uses: bahmutov/npm-install@v1
         with:
           working-directory: .github/workflows/dlCountApp
       - name: Run Download Count Script
